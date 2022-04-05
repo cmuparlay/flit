@@ -1,0 +1,8 @@
+g++ -g -fno-omit-frame-pointer -Wall -std=c++1z -DPWB_IS_CLFLUSH -DALIGNMENT=64 tests/test-aravind-bst.cpp -o build/test-aravind-bst -I./ -I./include -I./datastructures -lpthread -lboost_program_options
+g++ -g -fno-omit-frame-pointer -Wall -std=c++1z -DPWB_IS_CLFLUSH -DALIGNMENT=64 tests/test-harris-linkedlist.cpp -o build/test-harris-linkedlist -I./ -I./include -I./datastructures -lpthread -lboost_program_options
+g++ -g -fno-omit-frame-pointer -Wall -std=c++1z -DPWB_IS_CLFLUSH -DALIGNMENT=64 tests/test-skiplist.cpp -o build/test-skiplist -I./ -I./include -I./datastructures -lpthread -lboost_program_options
+g++ -g -fno-omit-frame-pointer -Wall -std=c++1z -DPWB_IS_CLFLUSH -DALIGNMENT=64 tests/test-hashtable.cpp -o build/test-hashtable -I./ -I./include -I./datastructures -lpthread -lboost_program_options
+./build/test-aravind-bst
+./build/test-harris-linkedlist
+./build/test-skiplist
+./build/test-hashtable
