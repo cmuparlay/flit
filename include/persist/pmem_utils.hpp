@@ -18,7 +18,7 @@
 #define SAME_CACHELINE(a, b) ((((uint64_t)(a))>>6) == (((uint64_t)(b))>>6))
 const uint64_t CACHELINE_MASK = ~(64ULL-1ULL);
 
-thread_local bool disable_flushes = false;
+// thread_local bool disable_flushes = false;
 
 #ifdef PMEM_STATS
   std::atomic<int64_t> global_flush_count(0);
@@ -56,7 +56,7 @@ thread_local bool disable_flushes = false;
 template <class ET>
 inline void FLUSH(ET *p)
 {
-  if(disable_flushes) return;
+  // if(disable_flushes) return;
   #ifdef PMEM_STATS
     flush_count++;
   #endif
@@ -128,7 +128,7 @@ inline void FLUSH_node(ET *ptr)
 
 inline void FENCE()
 {
-  if(disable_flushes) return;
+  // if(disable_flushes) return;
   #ifdef PWB_IS_CLFLUSH
     //MFENCE();
   #elif PWB_IS_CLFLUSHOPT

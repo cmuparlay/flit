@@ -83,7 +83,7 @@ struct persist_hash<std::atomic<T>, DEFAULT_FLUSH_OPTION> {
         flush_counters[flush_counter_index].fetch_sub(1);
         return t;
       }
-      else val.exchange(newVal, order);
+      else return val.exchange(newVal, order);
     }
 
     bool compare_exchange_strong(T& oldVal, T newVal,
